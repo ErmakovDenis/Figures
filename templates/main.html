@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Figures</title>
+</head>
+<body>
+<p>Figures</p>
+
+{% if figure == 'cube' %}
+     проверка - куб
+    <img src='./static/cube.jpg'>
+{% elif figure == 'pyramid' %}
+    проверка - пирамида
+    <img src='./static/pyramid.jpg'>
+{% elif figure == 'sphere' %}
+    проверка - сфера
+    <img src='./static/sphere.jpeg'>
+{% elif figure == 'star' %}
+    проверка - звезла
+    <img src='./static/star.jpg'>
+ {% endif %}
+</body>
+</html>
