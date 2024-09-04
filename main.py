@@ -21,7 +21,7 @@ class ModelName(str, Enum):
 app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
-app.mount("/home/ermakov/PycharmProjects/figures/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/{model_name}")
 async def get_model(request: Request, model_name: ModelName):
