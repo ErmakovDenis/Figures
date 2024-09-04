@@ -2,7 +2,6 @@ name: Tests
 on: [push]
 jobs:
   test:
-    needs: [ lint ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
