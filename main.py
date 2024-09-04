@@ -1,3 +1,7 @@
+"""
+This is the main module of my application.
+It contains the entry point of the program.
+"""
 from enum import Enum
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
