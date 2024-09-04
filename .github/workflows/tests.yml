@@ -1,12 +1,13 @@
-name: Lint
+name: Tests
 on: [push]
 jobs:
-  lint:
+  test:
+    needs: [ lint ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install deps
         run: pip install -r requirments.txt
-      - name: Lint
-        run: pylint main.py
+      - name: Tests
+        run: python test.py
