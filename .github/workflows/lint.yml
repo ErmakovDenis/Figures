@@ -2,7 +2,7 @@ name: Lint
 on: [push]
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -11,7 +11,7 @@ jobs:
       - name: Lint
         run: pylint main.py
   test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v4
