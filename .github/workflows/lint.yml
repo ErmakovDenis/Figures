@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Activate VENV
-        run: cd Figures && python3 -m venv venv && source venv/bin/activate
+        run: cd figures && python3 -m venv venv && source venv/bin/activate
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
