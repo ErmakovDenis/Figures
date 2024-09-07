@@ -18,17 +18,15 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
       - name: Tests
-        run: python test.py
+        run: python3 test.py
   build:
     runs-on: self-hosted
     steps:
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          file: Dockerfile
-          push: false
-          tags: user/app:latest
+      - name: Set up Docker
+        uses: docker-practice/actions-setup-docker@v1
+
+      - name: Build Docker image
+        run: docker build -t figures .
+
+      - name: Run Docker container
+        run: docker run -d -p 8000:8000 figures
