@@ -22,9 +22,6 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - name: Set up Docker
-        uses: docker-practice/actions-setup-docker@v1
-
       - name: Build Docker image
         run: docker build -t figures .
 
