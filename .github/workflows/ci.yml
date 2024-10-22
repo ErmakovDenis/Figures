@@ -1,24 +1,6 @@
 name: My Workflow
 
 on:
-  pull_request:
-    branches:
-      - main
-    inputs:
-      message:
-        description: 'Message to print'
-        default: 'Hello from pull request!'
-        required: false
-        type: string
-  push:
-    branches:
-      - main
-    inputs:
-      message:
-        description: 'Message to print'
-        default: 'Hello from push!'
-        required: false
-        type: string
   workflow_dispatch:
     inputs:
       message:
