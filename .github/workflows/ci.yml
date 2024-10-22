@@ -1,0 +1,35 @@
+name: My Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+    inputs:
+      message:
+        description: 'Message to print'
+        default: 'Hello from pull request!'
+        required: false
+        type: string
+  push:
+    branches:
+      - main
+    inputs:
+      message:
+        description: 'Message to print'
+        default: 'Hello from push!'
+        required: false
+        type: string
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Message to print'
+        default: 'Hello from workflow dispatch!'
+        required: false
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Message
+        run: echo ${{ inputs.message }}
