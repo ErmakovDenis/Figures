@@ -1,5 +1,6 @@
 name: My Workflow
-
+env:
+    GH_TOKEN: ${{ github.token }}
 on:
   workflow_dispatch:
     inputs:
